@@ -1,14 +1,14 @@
 class Puissance4:
 
-    def __init__(self, i, j):
+    def __init__(self, i: int, j: int):
             self.board = [['O' for column in range(j)] for line in range(i)]
             self.width = j
             self.height = i
-    def print(self):
+    def print(self) -> None:
         for row in self.board[::-1]:
             print(row)
 
-    def play(self, column: int, player: str):
+    def play(self, column: int, player: str) -> None:
         for row in self.board:
             if row[column] == "O":
                 row[column] = player
@@ -18,7 +18,7 @@ class Puissance4:
             print("Le joueur " + player + " a gagné !")
             exit()
 
-    def winCheck(self):
+    def winCheck(self) -> bool:
         for row in self.board:
             for column in range(self.width - 3):
                 if row[column] == row[column + 1] == row[column + 2] == row[column + 3] != "O":
@@ -41,7 +41,7 @@ class AI_One:
     def __init__(self, player):
         self.player = player
     
-    def think(self, board: Puissance4):
+    def think(self, board: Puissance4) -> None:
         played :list = []
         for column in range(board.width):
             for row in range(board.height):

@@ -11,20 +11,20 @@ class Auteur(Personne):
         super().__init__(firstName, name)
         self.oeuvres = oeuvres
     
-    def ecrireUnLivre(self, titre: str):
+    def ecrireUnLivre(self, titre: str) -> None:
         self.oeuvres.append(Livre(titre, self))
     
-    def listerOeuvres(self):
+    def listerOeuvres(self) -> None:
         for livre in self.oeuvres:
             print(livre.print)
 
 class Livre: 
-    def __init__(self, titre: str, Auteur: Auteur): 
+    def __init__(self, titre: str, Auteur: Auteur) -> None: 
         self.auteur = Auteur
         self.titre = titre
 
     @property
-    def print(self):
+    def print(self) -> str:
         return self.titre
 
 auteur1 = Auteur("Lucien", "ZAK")
