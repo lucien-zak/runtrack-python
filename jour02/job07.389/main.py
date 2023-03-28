@@ -1,3 +1,5 @@
+import random
+
 class Puissance4:
 
     def __init__(self, i: int, j: int):
@@ -49,12 +51,12 @@ class AI_One:
                     played.append([row, column])
         if played == [] and board.board[0][5] == "O":
             board.play(5, self.player)
+            return
         else:
-            for row in range(board.height):
-                for column in range(board.width):
-                    if board.board[row][column] == "O":
-                        board.play(column, self.player)
-                        return
+            for row, column in played:
+                board.play(column, self.player)
+                return
+        board.play(random.randrange(0,board.width), self.player)
        
     
          
