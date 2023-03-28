@@ -36,16 +36,32 @@ class Puissance4:
                 if self.board[row][column + 3] == self.board[row + 1][column + 2] == self.board[row + 2][column + 1] == self.board[row + 3][column] != "O":
                     return True
         return False
+    
+class AI_One:
+    def __init__(self, player):
+        self.player = player
+    
+    def think(self, board: Puissance4):
+        played :list = []
+        for column in range(board.width):
+            for row in range(board.height):
+                if board.board[row][column] == self.player:
+                    played.append([row, column])
+        if played == [] and board.board[0][5] == "O":
+            board.play(5, self.player)
+        else:
+            for row in range(board.height):
+                for column in range(board.width):
+                    if board.board[row][column] == "O":
+                        board.play(column, self.player)
+                        return
+       
+    
          
 
 
 puissance4 = Puissance4(10, 10)
-puissance4.play(0, "X")
-puissance4.play(0, "X")
-puissance4.play(0, "X")
-puissance4.play(3, "Y")
-puissance4.play(3, "Y")
-puissance4.play(3, "Y")
-puissance4.play(3, "Y")
-puissance4.print()
-print(puissance4.winCheck())
+for i in range(100):
+    AI_One("R").think(puissance4)
+    AI_One("B").think(puissance4)
+    puissance4.print()
