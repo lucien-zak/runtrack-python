@@ -72,5 +72,4 @@ bibliotheque1 = Bibliotheque(
 client1 = Client("Eric", "CARTMAN")
 bibliotheque1.louerUnLivre(auteur1.oeuvres[0], client1)
 
-bibliotheque1.rendreLivre(client1)
 client1.inventaire()
