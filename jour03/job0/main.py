@@ -1,0 +1,5 @@
+text = input('Entrez un texte: ')
+f = open('output.txt', 'x')
+f.write(text)
+f.close()
+print('Le fichier a été créé')
