@@ -17,8 +17,7 @@ while i < len(list) - 1:
         newList[list[i]] = [list[i + 1]]
     i += 1
 
-for key in newList:
-    
+
     
 # plt.plot(['A', 'A'],["B", 'C'], color='blue', marker='o')
 # plt.show()
