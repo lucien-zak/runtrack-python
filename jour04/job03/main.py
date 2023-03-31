@@ -26,7 +26,7 @@ def queen(n):
         return 'Impossible de placer la reine'
     queenColumn = random.choice(test)
     if queenColumn not in lastQueen and deplacementPossilble(lastQueen, queenColumn):
-        string = ' O ' * (queenColumn - 1) + ' X ' + ' O ' * (number - queenColumn)
+        string = ' . ' * (queenColumn - 1) + ' X ' + ' . ' * (number - queenColumn)
         lastQueen.append(queenColumn)
         test.remove(queenColumn)
     else:
